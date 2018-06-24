@@ -18,7 +18,14 @@ class Version20180624115450 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, login VARCHAR(50) NOT NULL, name VARCHAR(250) NOT NULL, UNIQUE INDEX UNIQ_8D93D649AA08CB10 (login), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
+        $this->addSql('
+                        CREATE TABLE user (
+                          id INT AUTO_INCREMENT NOT NULL, 
+                          login VARCHAR(50) NOT NULL, 
+                          name VARCHAR(250) NOT NULL, 
+                          UNIQUE INDEX UNIQ_8D93D649AA08CB10 (login), 
+                          PRIMARY KEY(id)) 
+                          DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
     }
 
     /**
